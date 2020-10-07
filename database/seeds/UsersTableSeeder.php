@@ -15,13 +15,13 @@ class UsersTableSeeder extends Seeder
             [
                 'name' => 'Employer',
                 'email' => 'employer@dwbs.com',
-                'is_admin' => '1',
+                'is_employer' => '1',
                 'password' => bcrypt('password'),
             ],
             [
                 'name' => 'Candidate',
                 'email' => 'candidate@dwbs.com',
-                'is_admin' => '0',
+                'is_employer' => '0',
                 'password' => bcrypt('password'),
             ],
         ];
