@@ -27,4 +27,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password'
     ];
+
+    public function jobs()
+    {
+        return $this->hasMany('App\Job');
+    }
 }
