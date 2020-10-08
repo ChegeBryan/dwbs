@@ -39,6 +39,7 @@
             </select>
           </div>
         </div>
+        <button type="submit" class="btn btn-primary btn-block">Search</button>
       </form>
     </div>
   </div>
