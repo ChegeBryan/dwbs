@@ -8,8 +8,8 @@
     </li>
     <li class="list-group-item list-group-item-action"><a class="pl-2 stretched-link text-decoration-none" href="#"><i
            class="fas fa-edit fa-fw mx-2"></i> Edit Profile</a></li>
-    <li class="list-group-item list-group-item-action"><a class="pl-2 stretched-link text-decoration-none" href="#"><i
-           class="fas fa-user-plus fa-fw mx-2"></i> Post New Job</a></li>
+    <li class="list-group-item list-group-item-action"><a class="pl-2 stretched-link text-decoration-none"
+         href="{{ route('jobs.create') }}"><i class="fas fa-user-plus fa-fw mx-2"></i> Post New Job</a></li>
     <li class="list-group-item list-group-item-action"><a class="pl-2 stretched-link text-decoration-none" href="#"><i
            class="fas fa-briefcase fa-fw mx-2"></i> Manage Jobs</a></li>
     <li class="list-group-item list-group-item-action"><a class="pl-2 stretched-link text-decoration-none" href="#"><i
