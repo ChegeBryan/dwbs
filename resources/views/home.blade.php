@@ -42,5 +42,58 @@
       </form>
     </div>
   </div>
+  <div class="d-flex justify-content-center mt-n4"><button class="btn btn-primary btn-lg rounded-circle"><i
+         class="fas fa-angle-double-down fa-fw"></i></button></div>
 </div>
+
+<div class="container py-4 jobs">
+  <h1 class="text-center">Latest Jobs Posted</h1>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Job Title</th>
+          <th scope="col">Employer</th>
+          <th scope="col">City</th>
+          <th scope="col">Compensation</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+$(document).ready(function() {
+  $("button").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".jobs").offset().top
+      },
+      'slow');
+  });
+})
+</script>
 @endsection
