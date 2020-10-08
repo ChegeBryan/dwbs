@@ -33,6 +33,6 @@ class HomeController extends Controller
      */
     public function employerHome()
     {
-        return view('employer');
+        return view('employer.index');
     }
 }
