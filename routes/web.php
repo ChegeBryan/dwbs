@@ -17,3 +17,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('employer/home', 'HomeController@employerHome')->name('employer.home')->middleware('employer');
+Route::group(['middleware' => 'employer', 'prefix' => 'employer'], function () {
+    Route::resource('jobs', 'JobController');
+});
