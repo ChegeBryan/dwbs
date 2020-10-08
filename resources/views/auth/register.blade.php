@@ -3,7 +3,7 @@
 @section('content')
 <div class="container py-4">
   <div class="d-flex justify-content-center align-items-center">
-    <div class="card" style="width: 23rem;">
+    <div class="card shadow-sm" style="width: 23rem;">
       <div class="card-body">
         <h3 class="card-title text-center">{{ __('Register') }}</h3>
         <form method="POST" action="{{ route('register') }}">
@@ -66,7 +66,7 @@
           </div>
 
           <div class="custom-control custom-switch">
-            <input type="checkbox" class="custom-control-input" id="is_employer" value="1">
+            <input type="checkbox" class="custom-control-input" id="is_employer" name="employer">
             <label class="custom-control-label" for="is_employer">Register as Employer</label>
           </div>
 
