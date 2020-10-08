@@ -65,8 +65,12 @@
                    autocomplete="new-password">
           </div>
 
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="is_employer" value="1">
+            <label class="custom-control-label" for="is_employer">Register as Employer</label>
+          </div>
 
-          <button type="submit" class="btn btn-primary btn-block">
+          <button type="submit" class="btn btn-primary btn-block mt-3">
             {{ __('Register') }}
           </button>
         </form>
