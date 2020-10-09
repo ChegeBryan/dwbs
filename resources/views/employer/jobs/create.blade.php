@@ -66,7 +66,7 @@
         <!--End about job-->
 
         <!--JOb description -->
-        <div class="card my-5">
+        <div class="card my-4">
           <div class="card-header">About Job</div>
           <div class="card-body">
             <div class="form-group">
@@ -84,8 +84,48 @@
         <!--End job description -->
 
         <!--Address and Location-->
-
+        <div class="card my-4">
+          <div class="card-header">Address and Location</div>
+          <div class="card-body">
+            <div class="form-row">
+              <div class="col">
+                <label for="county" class="col-form-label">{{ __('County') }}</label>
+                <input id="county" type="text" class="form-control @error('county') is-invalid @enderror" name="county"
+                       value="{{ old('county') }}" required>
+                @error('county')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+              </div>
+              <div class="col">
+                <label for="town" class="col-form-label">{{ __('Town / City') }}</label>
+                <input id="town" type="text" class="form-control @error('town') is-invalid @enderror" name="town"
+                       value="{{ old('town') }}" required>
+                @error('county')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="address" class="col-form-label">{{ __('Full Address') }}</label>
+              <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address"
+                     value="{{ old('address') }}" required>
+              @error('address')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+              @enderror
+            </div>
+          </div>
+        </div>
         <!--End Address and Location-->
+
+        <button type="submit" class="btn btn-primary btn-block mt-3">
+          {{ __('Post Job') }}
+        </button>
       </form>
     </div>
   </div>
