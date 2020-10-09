@@ -96,7 +96,29 @@ class JobController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'category' => 'required',
+            'job_type' => 'required',
+            'salary' => 'required|min:1',
+            'job_description' => 'required',
+            'county' => 'required',
+            'town' => 'required',
+            'address' => 'required',
+        ]);
+
+        $job = Job::find($id);
+        $job->title = $request->get('title');
+        $job->category = $request->get('category');
+        $job->type = $request->get('job_type');
+        $job->description = $request->get('job_description');
+        $job->salary = $request->get('salary');
+        $job->county = $request->get('county');
+        $job->town = $request->get('town');
+        $job->address = $request->get('address');
+
+        $job->save();
+        return redirect()->route('jobs.index')->with('success', 'Job Updated!');
     }
 
     /**
