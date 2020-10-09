@@ -11,6 +11,7 @@ class Job extends Model
         'category',
         'title',
         'type',
+        'description',
         'salary',
         'county',
         'town',

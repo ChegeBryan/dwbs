@@ -52,7 +52,7 @@ class JobController extends Controller
             'category' => $request->get('category'),
             'title' => $request->get('title'),
             'type' => $request->get('job_type'),
-            'description' => $request->get('description'),
+            'description' => $request->get('job_description'),
             'salary' => $request->get('salary'),
             'county' => $request->get('county'),
             'town' => $request->get('town'),
