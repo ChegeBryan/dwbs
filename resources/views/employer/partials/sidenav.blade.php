@@ -1,6 +1,8 @@
 <div class="card">
   <div class="card-body">
-    <h1 class="card-title">User name</h1>
+    <i class="card-img-top far fa-user fa-8x text-center text-info mb-3"></i>
+    <h5 class="card-title">{{ ucwords(Auth::user()->name) }}</h5>
+    <h6 class="card-subtitle">{{ ucwords(Auth::user()->mobile) }}</h6>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item list-group-item-action"><a
