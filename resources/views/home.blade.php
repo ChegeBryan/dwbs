@@ -80,7 +80,8 @@
 
   <div class="d-flex justify-content-between">
     <p>Showing {{count($jobs)}} of {{$all_jobs}} latest jobs.</p>
-    <a href="" class="text-primary text-decoration-none">See all jobs <i class="fas fa-long-arrow-alt-right"></i></a>
+    <a href="{{route('jobs')}}" class="text-primary text-decoration-none">See all jobs <i
+         class="fas fa-long-arrow-alt-right"></i></a>
   </div>
 </div>
 
