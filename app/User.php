@@ -28,8 +28,15 @@ class User extends Authenticatable
         'password'
     ];
 
+    // define a one-to-many relationship for employer and jobs
     public function jobs()
     {
         return $this->hasMany('App\Job');
+    }
+
+    // define a one-to-many relationship for candidate and jobs
+    public function applications()
+    {
+        return $this->hasMany('App\Application');
     }
 }
