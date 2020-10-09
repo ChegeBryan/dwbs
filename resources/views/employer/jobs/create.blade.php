@@ -74,7 +74,7 @@
             <div class="form-group">
               <label for="job_description" class="col-form-label">{{ __('Job Description') }}</label>
               <textarea class="form-control @error('job_description') is-invalid @enderror" rows="4"
-                        name="job_description">A description of what the job will involve.</textarea>
+                        name="job_description" placeholder="A description of what the job will involve."></textarea>
               @error('job_description')
               <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
