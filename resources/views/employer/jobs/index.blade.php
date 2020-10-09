@@ -29,8 +29,14 @@
                    class="fas fa-eye fa-fw"></i></a></li>
             <li class="list-inline-item mr-3"><a href="{{route('jobs.edit',  $job->id)}}" class="text-dark"><i
                    class="fas fa-edit fa-fw"></i></a></li>
-            <li class="list-inline-item"><a href="{{route('jobs.destroy',  $job->id)}}" class="text-dark"><i
-                   class="fas fa-trash-alt fa-fw"></i></a></li>
+            <li class="list-inline-item">
+              <form action="{{ route('jobs.destroy', $job->id)}}" method="post">
+                @csrf
+                @method('DELETE')
+                <a href="" class="text-dark" onclick="this.closest('form').submit();return false;"><i
+                     class="fas fa-trash-alt fa-fw"></i></a>
+              </form>
+            </li>
           </ul>
         </td>
       </tr>
