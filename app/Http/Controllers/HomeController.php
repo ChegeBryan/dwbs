@@ -46,7 +46,8 @@ class HomeController extends Controller
      */
     public function jobs()
     {
-        $jobs = Job::paginate(15);
-        return view('jobs', compact('jobs'));
+        $jobs = Job::paginate(8);
+        $all_jobs = Job::all()->count();
+        return view('jobs', compact('jobs', 'all_jobs'));
     }
 }
