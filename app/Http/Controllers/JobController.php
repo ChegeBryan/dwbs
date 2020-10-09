@@ -15,7 +15,8 @@ class JobController extends Controller
      */
     public function index()
     {
-        //
+        $jobs = Job::where('employer_id', Auth::user()->id)->get();
+        return view('employer.jobs.index', compact('jobs'));
     }
 
     /**
