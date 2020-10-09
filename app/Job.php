@@ -13,7 +13,8 @@ class Job extends Model
         'type',
         'compensation',
         'county',
-        'town'
+        'town',
+        'address',
     ];
 
     public function user()
