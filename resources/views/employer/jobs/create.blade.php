@@ -7,9 +7,11 @@
       @include('employer.partials.sidenav')
     </div>
     <div class="col-md-9">
-      <form>
+      <form method="POST" action="{{route('jobs.store')}}">
+        @csrf
+
         <!-- About job-->
-        <div class="card">
+        <div class=" card">
           <div class="card-header">Post New Job</div>
           <div class="card-body">
             <div class="form-group">
