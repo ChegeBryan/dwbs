@@ -25,7 +25,8 @@ class HomeController extends Controller
     public function index()
     {
         $jobs = Job::latest()->take(5)->get();
-        return view('home', compact('jobs'));
+        $all_jobs = Job::all()->count();
+        return view('home', compact('jobs', 'all_jobs'));
     }
 
     /**

@@ -49,12 +49,12 @@
 
 <div class="container py-5 jobs">
   <h1 class="text-center">Latest Jobs Posted</h1>
-  <div class="table-responsive pt-3">
+  <div class="table-responsive-sm pt-3">
     <table class="table">
       <thead>
         <tr>
           <th scope="col">Job Title</th>
-          <th scope="col">Employer</th>
+          <th scope="col">Posted By</th>
           <th scope="col">Town</th>
           <th scope="col">Salary</th>
           <th scope="col">Action</th>
@@ -74,6 +74,13 @@
         @endforeach
       </tbody>
     </table>
+  </div>
+
+  <hr>
+
+  <div class="d-flex justify-content-between">
+    <p>Showing {{count($jobs)}} of {{$all_jobs}} latest jobs.</p>
+    <a href="" class="text-primary text-decoration-none">See all jobs <i class="fas fa-long-arrow-alt-right"></i></a>
   </div>
 </div>
 
