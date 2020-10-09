@@ -38,4 +38,15 @@ class HomeController extends Controller
     {
         return view('employer.index');
     }
+
+    /**
+     * Show the all jobs.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function jobs()
+    {
+        $jobs = Job::paginate(15);
+        return view('jobs', compact('jobs'));
+    }
 }
