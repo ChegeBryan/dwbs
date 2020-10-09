@@ -47,41 +47,31 @@
          class="fas fa-angle-double-down fa-fw"></i></button></div>
 </div>
 
-<div class="container py-4 jobs">
+<div class="container py-5 jobs">
   <h1 class="text-center">Latest Jobs Posted</h1>
-  <div class="table-responsive">
+  <div class="table-responsive pt-3">
     <table class="table">
       <thead>
         <tr>
           <th scope="col">Job Title</th>
           <th scope="col">Employer</th>
-          <th scope="col">City</th>
-          <th scope="col">Compensation</th>
+          <th scope="col">Town</th>
+          <th scope="col">Salary</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
+        @foreach($jobs as $job)
         <tr>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+          <td>{{ucwords($job->title)}}</td>
+          <td>{{ucwords($job->user->name)}}</td>
+          <td>{{ucwords($job->town)}}</td>
+          <td>Ksh. {{number_format($job->salary, 2)}}</td>
+          <td>
+            <a class="btn btn-primary" href="">Apply</a>
+          </td>
         </tr>
-        <tr>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
+        @endforeach
       </tbody>
     </table>
   </div>
