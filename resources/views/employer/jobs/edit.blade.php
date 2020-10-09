@@ -7,7 +7,7 @@
 
   <!-- About job-->
   <div class=" card">
-    <div class="card-header">Update Job</div>
+    <div class="card-header bg-gradient-primary text-white">Update Job</div>
     <div class="card-body">
       <div class="form-group">
         <label for="title" class="col-form-label">{{ __('Job Title') }}</label>
@@ -64,7 +64,7 @@
 
   <!--JOb description -->
   <div class="card my-4">
-    <div class="card-header">Update Job Description</div>
+    <div class="card-header bg-gradient-primary text-white">Update Job Description</div>
     <div class="card-body">
       <div class="form-group">
         <label for="job_description" class="col-form-label">{{ __('Job Description') }}</label>
@@ -82,7 +82,7 @@
 
   <!--Address and Location-->
   <div class="card my-4">
-    <div class="card-header">Update Address and Location</div>
+    <div class="card-header bg-gradient-primary text-white">Update Address and Location</div>
     <div class="card-body">
       <div class="form-row">
         <div class="col">

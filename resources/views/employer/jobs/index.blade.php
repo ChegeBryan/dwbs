@@ -3,7 +3,7 @@
 @section('col-9')
 <div class="table-responsive-sm">
   <table class="table">
-    <thead class="bg-dark text-white">
+    <thead class="bg-gradient-primary text-white">
       <tr>
         <th class="py-4 pl-5">Job Title</th>
         <th class="py-4 pl-5">Applications</th>
