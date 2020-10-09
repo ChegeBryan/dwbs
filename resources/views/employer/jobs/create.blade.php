@@ -14,8 +14,8 @@
           <div class="card-body">
             <div class="form-group">
               <label for="title" class="col-form-label">{{ __('Job Title') }}</label>
-              <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title"
-                     value="{{ old('title') }}" required autofocus>
+              <input id="title" type="text" class="form-control @error('title') is-invalid @enderror"
+                     placeholder="House cleaner" name="title" value="{{ old('title') }}" required autofocus>
 
               @error('title')
               <span class="invalid-feedback" role="alert">
@@ -51,9 +51,9 @@
                 @enderror
               </div>
               <div class="col">
-                <label for="salary" class="col-form-label">{{ __('Salary') }}</label>
+                <label for="salary" class="col-form-label">{{ __('Salary (Ksh.)') }}</label>
                 <input id="salary" type="number" class="form-control @error('salary') is-invalid @enderror"
-                       name="salary" value="{{ old('salary') }}" required>
+                       name="salary" value="{{ old('salary') }}" placeholder="15000" required>
                 @error('salary')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
@@ -72,7 +72,7 @@
             <div class="form-group">
               <label for="job_description" class="col-form-label">{{ __('Job Description') }}</label>
               <textarea class="form-control @error('job_description') is-invalid @enderror" rows="4"
-                        name="job_description"></textarea>
+                        name="job_description">A description of what the job will involve.</textarea>
               @error('job_description')
               <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -90,8 +90,8 @@
             <div class="form-row">
               <div class="col">
                 <label for="county" class="col-form-label">{{ __('County') }}</label>
-                <input id="county" type="text" class="form-control @error('county') is-invalid @enderror" name="county"
-                       value="{{ old('county') }}" required>
+                <input id="county" type="text" class="form-control @error('county') is-invalid @enderror"
+                       placeholder="Nairobi" name="county" value="{{ old('county') }}" required>
                 @error('county')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
@@ -100,8 +100,8 @@
               </div>
               <div class="col">
                 <label for="town" class="col-form-label">{{ __('Town / City') }}</label>
-                <input id="town" type="text" class="form-control @error('town') is-invalid @enderror" name="town"
-                       value="{{ old('town') }}" required>
+                <input id="town" type="text" class="form-control @error('town') is-invalid @enderror"
+                       placeholder="Kasarani" name="town" value="{{ old('town') }}" required>
                 @error('county')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
@@ -111,8 +111,9 @@
             </div>
             <div class="form-group">
               <label for="address" class="col-form-label">{{ __('Full Address') }}</label>
-              <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address"
-                     value="{{ old('address') }}" required>
+              <input id="address" type="text" class="form-control @error('address') is-invalid @enderror"
+                     placeholder="Nairobi, Kasarani, Roysambu opposite TRM" name="address" value="{{ old('address') }}"
+                     required>
               @error('address')
               <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
