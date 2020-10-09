@@ -19,9 +19,11 @@ class CreateJobsTable extends Migration
             $table->string('category');
             $table->string('title'); // job title
             $table->string('type'); // fulltime/parttime
-            $table->double('compensation', 8, 2); // salary
+            $table->double('salary', 10, 2);
+            $table->text('description');
             $table->string('county');
             $table->string('town');
+            $table->text('address');
             $table->timestamps();
             $table->foreign('employer_id')
                 ->references('id')->on('users')
