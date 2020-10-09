@@ -22,7 +22,7 @@
     @yield('custom_css')
   </head>
 
-  <body>
+  <body class="position-relative">
     <div id="app">
       <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
@@ -81,6 +81,30 @@
         @yield('content')
       </main>
     </div>
+
+    @if(session()->get('success'))
+    <div class="toast" style="position: absolute; top: 60px; right: 10px; min-width: 200px" data-delay="2500">
+      <div class="toast-header bg-success">
+        <strong class="mr-auto text-white">Success</strong>
+        <button type="button" class="ml-2 mb-1 close text-white" data-dismiss="toast" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="toast-body">
+        {{ session()->get('success') }}
+      </div>
+    </div>
+    <script>
+    $(document).ready(function() {
+      $(".toast").toast('show');
+    });
+    </script>
+    @endif
+
+
+
+
+
   </body>
 
 </html>

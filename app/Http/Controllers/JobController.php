@@ -60,7 +60,7 @@ class JobController extends Controller
             'address' => $request->get('address'),
         ]);
         $job->save();
-        return redirect()->route('jobs.create')->with('success', 'Job Posted!');
+        return redirect()->route('jobs.create')->with('success', 'Job ' . ucfirst($job->title) . ' Posted!');
     }
 
     /**
@@ -118,7 +118,7 @@ class JobController extends Controller
         $job->address = $request->get('address');
 
         $job->save();
-        return redirect()->route('jobs.index')->with('success', 'Job Updated!');
+        return redirect()->route('jobs.index')->with('success', 'Updated ' . ucfirst($job->title) . ' job!');
     }
 
     /**
@@ -131,6 +131,6 @@ class JobController extends Controller
     {
         $job = Job::find($id);
         $job->delete();
-        return redirect()->route('jobs.index')->with('success', 'Job deleted!');
+        return redirect()->route('jobs.index')->with('success', 'Deleted ' . ucfirst($job->title) . ' job!');
     }
 }
