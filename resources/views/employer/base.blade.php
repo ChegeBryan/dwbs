@@ -7,12 +7,7 @@
       @include('employer.partials.sidenav')
     </div>
     <div class="col-md-9">
-      <div class="card">
-        <div class="card-header">Dashboard</div>
-        <div class="card-body">
-          You are an Employer.
-        </div>
-      </div>
+      @yield('col-9')
     </div>
   </div>
 </div>
