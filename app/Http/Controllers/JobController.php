@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Job;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class JobController extends Controller
 {
@@ -34,7 +36,30 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'category' => 'required',
+            'job_type' => 'required',
+            'salary' => 'required|min:1',
+            'job_description' => 'required',
+            'county' => 'required',
+            'town' => 'required',
+            'address' => 'required',
+        ]);
+
+        $job = new Job([
+            'employer_id' => Auth::user()->id,
+            'category' => $request->get('category'),
+            'title' => $request->get('title'),
+            'type' => $request->get('job_type'),
+            'description' => $request->get('description'),
+            'salary' => $request->get('salary'),
+            'county' => $request->get('county'),
+            'town' => $request->get('town'),
+            'address' => $request->get('address'),
+        ]);
+        $job->save();
+        return redirect()->route('jobs.create')->with('success', 'Job Posted!');
     }
 
     /**
