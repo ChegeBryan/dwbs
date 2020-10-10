@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Application;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CandidateProfileController extends Controller
 {
@@ -13,7 +15,8 @@ class CandidateProfileController extends Controller
      */
     public function index()
     {
-        //
+        $applications = Application::where('candidate_id', Auth::user()->id)->paginate(5);
+        return view('candidate.index', compact('applications'));
     }
 
     /**
