@@ -18,6 +18,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/jobs', 'HomeController@jobs')->name('jobs');
 Route::group(['middleware' => 'employer', 'prefix' => 'employer'], function () {
-    Route::get('', 'HomeController@employerHome')->name('employer');
+    Route::redirect('', '/employer/jobs', 301)->name('employer');
     Route::resource('jobs', 'JobController');
 });
