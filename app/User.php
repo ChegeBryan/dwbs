@@ -39,4 +39,10 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Application');
     }
+
+    // define a one-to-one relationship user and candidate pofile
+    public function profile()
+    {
+        return $this->hasOne('App\CandidateProfile', 'candidate_id');
+    }
 }
