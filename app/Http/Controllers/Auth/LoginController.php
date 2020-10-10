@@ -52,7 +52,7 @@ class LoginController extends Controller
             if (auth()->user()->is_employer == 1) {
                 return redirect()->route('employer');
             } else {
-                return redirect()->route('home');
+                return redirect()->route('candidate');
             }
         } else {
             return redirect()->route('login')
