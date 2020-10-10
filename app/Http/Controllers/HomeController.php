@@ -30,16 +30,6 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function employerHome()
-    {
-        return view('employer.index');
-    }
-
-    /**
      * Show the all jobs.
      *
      * @return \Illuminate\Contracts\Support\Renderable
