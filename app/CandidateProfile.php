@@ -16,4 +16,10 @@ class CandidateProfile extends Model
         'town',
         'status',
     ];
+
+    // define a one-to-one (inverse) relationship user and candidate profile
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }
