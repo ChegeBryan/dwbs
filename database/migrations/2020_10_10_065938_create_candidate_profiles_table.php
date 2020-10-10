@@ -22,7 +22,7 @@ class CreateCandidateProfilesTable extends Migration
             $table->string('county');
             $table->string('town');
             $table->boolean('status')->default(0); // 0 - Open for Work / Not open for work
-            $table->$table->timestamps();
+            $table->timestamps();
             $table->foreign('candidate_id')
                 ->references('id')->on('users')
                 ->onDelete('cascade');
