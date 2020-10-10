@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Application;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ApplicationController extends Controller
 {
@@ -68,9 +70,7 @@ class ApplicationController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $request->validate([
-
-      ])
+        //
     }
 
     /**
@@ -81,6 +81,8 @@ class ApplicationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $application = Application::find($id);
+        $application->delete();
+        return redirect()->route('candidate.index')->with('success', 'Deleted application job!');
     }
 }
