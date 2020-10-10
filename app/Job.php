@@ -26,7 +26,7 @@ class Job extends Model
     }
 
     // define a one-to-many relationship between jobs and applications
-    public function jobs()
+    public function applications()
     {
         return $this->hasMany('App\Application');
     }
