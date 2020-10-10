@@ -16,6 +16,7 @@ class Job extends Model
         'county',
         'town',
         'address',
+        'status',
     ];
 
     // define a one-to-many reverse relationship between users and jobs

@@ -24,6 +24,7 @@ class CreateJobsTable extends Migration
             $table->string('county');
             $table->string('town');
             $table->text('address');
+            $table->string('status')->default('Open');
             $table->timestamps();
             $table->foreign('employer_id')
                 ->references('id')->on('users')
