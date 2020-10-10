@@ -25,10 +25,16 @@
     </div>
     <div class=" col-md-4 col-sm-12 col-xs-12 ">
       <ul class="d-flex text-left text-md-right flex-column justify-content-between">
-        <li class=" p-2 d-inline-block"><button
-                  class="btn btn-outline-success btn-sm">{{$application->job->type}}</button>
+        <li class=" p-2 d-inline-block">
+          <button class="btn btn-outline-success btn-sm">{{$application->job->type}}</button>
         </li>
-        <li class=" p-2 d-inline-block"><button class="btn btn-outline-danger btn-sm">Delete</button></li>
+        <li class=" p-2 d-inline-block">
+          <form action="{{ route('application.destroy', $application->id ) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
+          </form>
+        </li>
       </ul>
     </div>
   </div>
