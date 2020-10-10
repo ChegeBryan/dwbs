@@ -24,8 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $jobs = Job::latest()->take(5)->get();
-        $all_jobs = Job::all()->count();
+        $jobs = Job::where('status', 'Open')->latest()->take(5)->get();
+        $all_jobs = Job::where('status', 'Open')->count();
         return view('home', compact('jobs', 'all_jobs'));
     }
 
@@ -46,8 +46,8 @@ class HomeController extends Controller
      */
     public function jobs()
     {
-        $jobs = Job::paginate(8);
-        $all_jobs = Job::all()->count();
+        $jobs = Job::where('status', 'Open')->paginate(10);
+        $all_jobs = Job::where('status', 'Open')->count();
         return view('jobs', compact('jobs', 'all_jobs'));
     }
 }
