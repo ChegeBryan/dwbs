@@ -21,3 +21,8 @@ Route::group(['middleware' => 'employer', 'prefix' => 'employer'], function () {
     Route::redirect('', '/employer/jobs', 301)->name('employer');
     Route::resource('jobs', 'JobController');
 });
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::redirect('', '/candidate', 301)->name('candidate');
+    Route::resource('candidate', 'CandidateProfileController');
+});
