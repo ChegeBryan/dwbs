@@ -17,7 +17,6 @@ class CreateApplicationsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('candidate_id');
             $table->unsignedBigInteger('job_id');
-            $table->string('status');
             $table->timestamps();
             $table->foreign('candidate_id')
                 ->references('id')->on('users')

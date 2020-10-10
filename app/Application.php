@@ -9,7 +9,6 @@ class Application extends Model
     protected $fillable = [
         'candidate_id',
         'job_id',
-        'status',
     ];
 
     // define a one-to-many(reverse) relationship between applications and job
