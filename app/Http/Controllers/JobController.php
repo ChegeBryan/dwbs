@@ -76,6 +76,18 @@ class JobController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function showJobToCandidate($id)
+    {
+        $job = Job::find($id);
+        return view('candidate.job', compact('job'));
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
