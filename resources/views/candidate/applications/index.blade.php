@@ -25,11 +25,7 @@
         <td class="py-5">{{ucwords($job->address)}}</td>
         <td class="py-5">Ksh. {{number_format($job->salary, 2)}}</td>
         <td class="py-5">
-          <form method="POST" action="{{route('application.store')}}">
-            @csrf
-            <input type="hidden" value="{{$job->id}}" name="job">
-            <button type="submit" class="btn btn-outline-danger">Apply</button>
-          </form>
+          <a class="btn btn-outline-danger" href="{{ route('job.candidate', $job->id) }}">View Details</a>
         </td>
       </tr>
       @endforeach
