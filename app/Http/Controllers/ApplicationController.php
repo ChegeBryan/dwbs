@@ -17,7 +17,8 @@ class ApplicationController extends Controller
     public function index()
     {
         $jobs = Job::where('status', 'Open')->get();
-        return view('candidate.applications.index', compact('jobs'));
+        $applications = Application::all();
+        return view('candidate.applications.index', compact('jobs', 'applications'));
     }
 
     /**
