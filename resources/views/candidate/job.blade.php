@@ -30,9 +30,24 @@
 
     <hr>
 
-    <p class="card-text"><span class="font-weight-bolder"><i class="fas fa-clipboard-list"></i> Applications: </span>
+    <p class="card-text"><span class="font-weight-bolder"><i class="fas fa-clipboard-list"></i> Applications:
+      </span>
       {{ count($job->applications) }}</p>
 
+    @if($job->applications->count() > 0)
+    @foreach($job->applications as $application)
+    @if($application->candidate->id == Auth::user()->id)
+    <div class="d-flex justify-content-around">
+      <button class="btn btn-outline-success">Already Applied</button>
+      <button class="btn btn-outline-danger">Delete Application</button>
+    </div>
+    @else
+    <button class="btn btn-outline-danger btn-block">Apply</button>
+    @endif
+    @endforeach
+    @else
+    <button class="btn btn-outline-danger btn-block">Apply</button>
+    @endif
   </div>
 
 </div>
