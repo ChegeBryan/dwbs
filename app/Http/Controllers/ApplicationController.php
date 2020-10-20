@@ -38,7 +38,15 @@ class ApplicationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'job' => 'required',
+        ]);
+        $application = new Application([
+            'candidate_id' => Auth::user()->id,
+            'job_id' => $request->get('job'),
+        ]);
+        $application->save();
+        return redirect()->route('application.index')->with('success', 'Application sent.');
     }
 
     /**
