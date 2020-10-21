@@ -28,7 +28,7 @@ class CandidateProfileController extends Controller
      */
     public function create()
     {
-        //
+        return view('candidate.profile.create');
     }
 
     /**
@@ -65,6 +65,7 @@ class CandidateProfileController extends Controller
         if ($profile->exists()) {
             return view('candidate.profile.edit', compact('profile'));
         };
+        return redirect()->route('candidate.create')->with('info', 'Profile not found. Create one here.');
     }
 
     /**
