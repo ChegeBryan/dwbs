@@ -101,9 +101,25 @@
     </script>
     @endif
 
-
-
-
+    @if(session()->get('info'))
+    <div id="info-toast" class="toast" style="position: absolute; top: 60px; right: 10px; min-width: 200px"
+         data-delay="2500">
+      <div class="toast-header bg-info">
+        <strong class="mr-auto text-white">Info</strong>
+        <button type="button" class="ml-2 mb-1 close text-dark" data-dismiss="toast" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="toast-body">
+        {{ session()->get('info') }}
+      </div>
+    </div>
+    <script>
+    $(document).ready(function() {
+      $("#info-toast").toast('show');
+    });
+    </script>
+    @endif
 
   </body>
 
