@@ -39,7 +39,11 @@
     @if($application->candidate->id == Auth::user()->id)
     <div class="d-flex justify-content-around">
       <button class="btn btn-outline-success">Already Applied</button>
-      <button class="btn btn-outline-danger">Delete Application</button>
+      <form action="{{ route('application.destroy', $application->id ) }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-outline-danger">Delete Application</button>
+      </form>
     </div>
     @else
     <button class="btn btn-outline-danger btn-block">Apply</button>

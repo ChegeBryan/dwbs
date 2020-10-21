@@ -94,6 +94,6 @@ class ApplicationController extends Controller
     {
         $application = Application::find($id);
         $application->delete();
-        return redirect()->route('candidate.index')->with('success', 'Deleted application job!');
+        return redirect()->route('candidate.index')->with('success', 'Deleted job applications!');
     }
 }
