@@ -11,8 +11,9 @@
            class="fas fa-tachometer-alt fa-fw mx-2 text-danger"></i> Dashboard</a>
     </li>
     <li class="list-group-item list-group-item-action border-0"><a
-         class="pl-2 stretched-link text-decoration-none text-secondary" href="#"><i
-           class="fas fa-edit fa-fw mx-2 text-danger"></i> Profile</a></li>
+         class="pl-2 stretched-link text-decoration-none text-secondary"
+         href="{{route('candidate.edit', Auth::user()->id)}}"><i class="fas fa-edit fa-fw mx-2 text-danger"></i>
+        Profile</a></li>
     <li class="list-group-item list-group-item-action border-0"><a
          class="pl-2 stretched-link text-decoration-none text-secondary" href="{{ route('application.index') }}"><i
            class="fas fa-briefcase fa-fw mx-2 text-danger"></i> Jobs Catalog</a></li>
