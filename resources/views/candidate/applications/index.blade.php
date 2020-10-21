@@ -25,7 +25,7 @@
         <td class="py-5">{{ucwords($job->address)}}</td>
         <td class="py-5">Ksh. {{number_format($job->salary, 2)}}</td>
         <td class="py-5">
-          <a class="btn btn-outline-danger" href="{{ route('job.candidate', $job->id) }}">View Details</a>
+          <a class="btn btn-outline-primary btn-sm" href="{{ route('job.candidate', $job->id) }}">View Details</a>
         </td>
       </tr>
       @endforeach
