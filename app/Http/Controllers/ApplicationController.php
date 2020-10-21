@@ -47,7 +47,7 @@ class ApplicationController extends Controller
             'job_id' => $request->get('job'),
         ]);
         $application->save();
-        return redirect()->route('application.index')->with('success', 'Application sent.');
+        return redirect()->route('candidate.index')->with('success', 'Application sent.');
     }
 
     /**
