@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Application;
+use App\CandidateProfile;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -60,7 +61,10 @@ class CandidateProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+        $profile = CandidateProfile::where('candidate_id', $id);
+        if ($profile->exists()) {
+            return view('candidate.profile.edit', compact('profile'));
+        };
     }
 
     /**
