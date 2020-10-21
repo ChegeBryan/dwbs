@@ -34,6 +34,11 @@
       </span>
       {{ count($job->applications) }}</p>
 
+
+    <p class="card-text"><span class="font-weight-bolder"><i class="fas fa-clock"></i> Posted on:
+      </span>
+      {{ date('d F Y', strtotime($job->created_at)) }}</p>
+
     @if($job->applications->count() > 0)
     @foreach($job->applications as $application)
     @if($application->candidate->id == Auth::user()->id)
