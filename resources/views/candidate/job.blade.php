@@ -46,11 +46,19 @@
       </form>
     </div>
     @else
-    <button class="btn btn-outline-danger btn-block">Apply</button>
+    <form action="{{ route('application.store') }}" method="POST">
+      @csrf
+      <input type="hidden" value="{{$job->id}}" name="job">
+      <button type="submit" class="btn btn-outline-danger btn-block">Apply</button>
+    </form>
     @endif
     @endforeach
     @else
-    <button class="btn btn-outline-danger btn-block">Apply</button>
+    <form action="{{ route('application.store') }}" method="POST">
+      @csrf
+      <input type="hidden" value="{{$job->id}}" name="job">
+      <button type="submit" class="btn btn-outline-danger btn-block">Apply</button>
+    </form>
     @endif
   </div>
 
