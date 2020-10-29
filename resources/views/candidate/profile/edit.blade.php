@@ -37,7 +37,7 @@
         <div class="col">
           <label for="salary" class="col-form-label">{{ __('Salary (Ksh.)') }}</label>
           <input id="salary" type="number" class="form-control @error('salary') is-invalid @enderror" name="salary"
-                 value="{{ old('salary') }}" value="{{ $profile->salary }}" placeholder="10000" required>
+                 value="{{ $profile->salary }}" value="{{ $profile->salary }}" placeholder="10000" required>
           @error('salary')
           <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
