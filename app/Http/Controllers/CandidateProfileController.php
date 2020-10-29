@@ -79,8 +79,8 @@ class CandidateProfileController extends Controller
      */
     public function edit($id)
     {
-        $profile = CandidateProfile::where('candidate_id', $id);
-        if ($profile->exists()) {
+        $profile = CandidateProfile::where('candidate_id', $id)->first();
+        if ($profile->count() == 1) {
             return view('candidate.profile.edit', compact('profile'));
         };
         return redirect()->route('candidate.create')->with('info', 'Profile not found. Create one here.');
