@@ -81,7 +81,7 @@
   <!--End Address and Location-->
 
   <button type="submit" class="btn btn-danger btn-block mt-3">
-    {{ __('Post Job Prefences') }}
+    {{ __('Add Job Prefences') }}
   </button>
 </form>
 @endsection
