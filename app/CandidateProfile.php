@@ -9,7 +9,6 @@ class CandidateProfile extends Model
     protected $fillable = [
         'candidate_id',
         'category',
-        'title',
         'type',
         'salary',
         'county',
