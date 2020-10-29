@@ -95,7 +95,23 @@ class CandidateProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'category' => 'required',
+            'job_type' => 'required',
+            'salary' => 'required',
+            'county' => 'required',
+            'town' => 'required',
+        ]);
+
+        $profile = CandidateProfile::find($id);
+        $profile->category = $request->get('category');
+        $profile->type = $request->get('job_type');
+        $profile->salary = $request->get('salary');
+        $profile->county = $request->get('county');
+        $profile->town = $request->get('town');
+
+        $profile->save();
+        return redirect()->route('candidate.index')->with('success', 'Job Preferences Updated.');
     }
 
     /**

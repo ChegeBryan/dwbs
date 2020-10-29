@@ -2,6 +2,7 @@
 
 @section('col-9')
 <form method="POST" action="{{route('candidate.update', $profile->id)}}">
+  @method('PATCH')
   @csrf
 
   <!-- Job job-->
