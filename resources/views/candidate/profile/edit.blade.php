@@ -1,7 +1,7 @@
 @extends('candidate.base')
 
 @section('col-9')
-<form method="POST" action="{{route('candidate.update', $profile->id)}}">
+<form method="POST" action="{{route('candidate.update', $profile->candidate_id)}}">
   @csrf
 
   <!-- Job job-->
@@ -81,7 +81,7 @@
   <!--End Address and Location-->
 
   <button type="submit" class="btn btn-danger btn-block mt-3">
-    {{ __('Update Jobs Prefences') }}
+    {{ __('Update Jobs Preferences') }}
   </button>
 </form>
 @endsection
