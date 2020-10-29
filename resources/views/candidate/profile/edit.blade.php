@@ -25,8 +25,8 @@
         <div class="col">
           <label for="job_type" class="col-form-label">{{ __('Job Type') }}</label>
           <select class="custom-select" name="job_type" id="job_type" required>
-            <option @if ($job->type)=== 'Full Time') selected @endif value="Full Time">Full Time</option>
-            <option @if ($job->type)=== 'Part Time') selected @endif value="Part Time">Part Time</option>
+            <option @if ($profile->job_type)=== 'Full Time') selected @endif value="Full Time">Full Time</option>
+            <option @if ($profile->job_type)=== 'Part Time') selected @endif value="Part Time">Part Time</option>
           </select>
           @error('job_type')
           <span class="invalid-feedback" role="alert">
@@ -52,7 +52,7 @@
 
   <!--Address and Location-->
   <div class="card my-4">
-    <div class="card-header bg-danger text-white">Job location Preferences</div>
+    <div class="card-header bg-danger text-white">Update Job location Preferences</div>
     <div class="card-body">
       <div class="form-row">
         <div class="col">
