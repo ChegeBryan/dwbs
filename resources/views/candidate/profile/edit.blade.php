@@ -6,7 +6,7 @@
 
   <!-- Job job-->
   <div class=" card">
-    <div class="card-header bg-danger text-white">Update Job Prefences</div>
+    <div class="card-header bg-danger text-white">Update Job Preferences</div>
     <div class="card-body">
       <div class="form-group">
         <label for="category" class="col-form-label">{{ __('Job Category') }}</label>
