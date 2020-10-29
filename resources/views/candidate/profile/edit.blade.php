@@ -36,7 +36,7 @@
           @enderror
         </div>
         <div class="col">
-          <label for="salary" class="col-form-label">{{ __('Salary (Ksh.)') }}</label>
+          <label for="salary" class="col-form-label">{{ __('Salary Above (Ksh.)') }}</label>
           <input id="salary" type="number" class="form-control @error('salary') is-invalid @enderror" name="salary"
                  value="{{ $profile->salary }}" value="{{ $profile->salary }}" placeholder="10000" required>
           @error('salary')
