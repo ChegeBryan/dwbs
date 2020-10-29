@@ -39,7 +39,25 @@ class CandidateProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'category' => 'required',
+            'job_type' => 'required',
+            'salary' => 'required',
+            'county' => 'required',
+            'town' => 'required',
+        ]);
+
+        $preferences = new CandidateProfile([
+            'candidate_id' => Auth::user()->id,
+            'category' => $request->get('category'),
+            'type' => $request->get('job_type'),
+            'salary' => $request->get('salary'),
+            'county' => $request->get('county'),
+            'town' => $request->get('town'),
+        ]);
+
+        $preferences->save();
+        return redirect()->route('candidate.index')->with('success', 'Job Preferences added');
     }
 
     /**
