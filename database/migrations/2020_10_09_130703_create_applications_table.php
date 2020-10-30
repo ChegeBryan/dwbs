@@ -23,7 +23,7 @@ class CreateApplicationsTable extends Migration
                 ->references('id')->on('users')
                 ->onDelete('cascade');
             $table->foreign('job_id')
-                ->references('id')->on('jobs')
+                ->references('id')->on('posts')
                 ->onDelete('cascade');
         });
     }
