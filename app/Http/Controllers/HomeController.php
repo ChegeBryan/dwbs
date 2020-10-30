@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Job;
+use App\Post;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,8 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $jobs = Job::where('status', 'Open')->latest()->take(5)->get();
-        $all_jobs = Job::where('status', 'Open')->count();
+        $jobs = Post::where('status', 'Open')->latest()->take(5)->get();
+        $all_jobs = Post::where('status', 'Open')->count();
         return view('home', compact('jobs', 'all_jobs'));
     }
 
@@ -36,8 +36,8 @@ class HomeController extends Controller
      */
     public function jobs()
     {
-        $jobs = Job::where('status', 'Open')->paginate(10);
-        $all_jobs = Job::where('status', 'Open')->count();
+        $jobs = Post::where('status', 'Open')->paginate(10);
+        $all_jobs = Post::where('status', 'Open')->count();
         return view('jobs', compact('jobs', 'all_jobs'));
     }
 }

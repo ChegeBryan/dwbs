@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Application;
-use App\Job;
+use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,7 +16,7 @@ class ApplicationController extends Controller
      */
     public function index()
     {
-        $jobs = Job::where('status', 'Open')->get();
+        $jobs = Post::where('status', 'Open')->get();
         $applications = Application::all();
         return view('candidate.applications.index', compact('jobs', 'applications'));
     }
