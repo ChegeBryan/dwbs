@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Job;
+use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class JobController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class JobController extends Controller
      */
     public function index()
     {
-        $jobs = Job::where('employer_id', Auth::user()->id)->paginate(5);
+        $jobs = Post::where('employer_id', Auth::user()->id)->paginate(5);
         return view('employer.jobs.index', compact('jobs'));
     }
 
@@ -48,7 +48,7 @@ class JobController extends Controller
             'address' => 'required',
         ]);
 
-        $job = new Job([
+        $job = new Post([
             'employer_id' => Auth::user()->id,
             'category' => $request->get('category'),
             'title' => $request->get('title'),
@@ -71,7 +71,7 @@ class JobController extends Controller
      */
     public function show($id)
     {
-        $job = Job::find($id);
+        $job = Post::find($id);
         return view('employer.jobs.show', compact('job'));
     }
 
@@ -83,9 +83,10 @@ class JobController extends Controller
      */
     public function showJobToCandidate($id)
     {
-        $job = Job::find($id);
+        $job = Post::find($id);
         return view('candidate.job', compact('job'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -95,7 +96,7 @@ class JobController extends Controller
      */
     public function edit($id)
     {
-        $job = Job::find($id);
+        $job = Post::find($id);
         return view('employer.jobs.edit', compact('job'));
     }
 
@@ -119,7 +120,7 @@ class JobController extends Controller
             'address' => 'required',
         ]);
 
-        $job = Job::find($id);
+        $job = Post::find($id);
         $job->title = $request->get('title');
         $job->category = $request->get('category');
         $job->type = $request->get('job_type');
@@ -141,7 +142,7 @@ class JobController extends Controller
      */
     public function destroy($id)
     {
-        $job = Job::find($id);
+        $job = Post::find($id);
         $job->delete();
         return redirect()->route('jobs.index')->with('success', 'Deleted ' . ucfirst($job->title) . ' job!');
     }
