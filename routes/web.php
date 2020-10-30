@@ -21,11 +21,11 @@ Route::get('/jobs', 'HomeController@jobs')->name('jobs');
 Route::group(['middleware' => 'auth'], function () {
     Route::redirect('', '/candidate', 301)->name('candidate');
     Route::resource('candidate', 'CandidateProfileController');
-    Route::get('/job/{id}', 'JobController@showJobToCandidate')->name('job.candidate');
+    Route::get('/job/{id}', 'PostController@showJobToCandidate')->name('job.candidate');
     Route::resource('application', 'ApplicationController')->only(['destroy', 'index', 'store']);
 });
 
 Route::group(['middleware' => 'employer', 'prefix' => 'employer'], function () {
     Route::redirect('', '/employer/jobs', 301)->name('employer');
-    Route::resource('jobs', 'JobController');
+    Route::resource('jobs', 'PostController');
 });
