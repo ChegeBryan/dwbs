@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Job;
+use App\Post;
 use Faker\Generator as Faker;
 
-$factory->define(Job::class, function (Faker $faker) {
+$factory->define(Post::class, function (Faker $faker) {
     return [
         'employer_id' => 1,
         'category' => $faker->randomElement($array = array('Shamba Boy', 'House help')),
