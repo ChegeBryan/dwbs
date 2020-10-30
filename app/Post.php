@@ -28,6 +28,6 @@ class Post extends Model
     // define a one-to-many relationship between jobs and applications
     public function applications()
     {
-        return $this->hasMany('App\Application');
+        return $this->hasMany('App\Application', 'job_id');
     }
 }
