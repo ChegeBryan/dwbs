@@ -31,7 +31,7 @@ class User extends Authenticatable
     // define a one-to-many relationship for employer and jobs
     public function jobs()
     {
-        return $this->hasMany('App\Job');
+        return $this->hasMany('App\Post');
     }
 
     // define a one-to-many relationship for candidate and jobs

@@ -15,7 +15,7 @@ class Application extends Model
     // define a one-to-many(reverse) relationship between applications and job
     public function job()
     {
-        return $this->belongsTo('App\Job');
+        return $this->belongsTo('App\Post');
     }
 
     // define a one-to-many(reverse) relationship between users and applications
