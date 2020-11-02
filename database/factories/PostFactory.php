@@ -8,7 +8,7 @@ use Faker\Generator as Faker;
 $factory->define(Post::class, function (Faker $faker) {
     return [
         'employer_id' => 1,
-        'category' => $faker->randomElement($array = array('Shamba Boy', 'House help')),
+        'category' => $faker->randomElement($array = array('Shamba Boy', 'House Help')),
         'title' => $faker->word,
         'type' => $faker->randomElement($array = array('Full Time', 'Part Time')),
         'description' => $faker->sentence,
