@@ -21,7 +21,7 @@ class CreateCandidateProfilesTable extends Migration
             $table->double('salary', 10, 2);
             $table->string('county');
             $table->string('town');
-            $table->boolean('status')->default(0); // 0 - Open for Work / Not open for work
+            $table->boolean('status')->default(0); // 0 - Open for Work / 1 - Not open for work
             $table->timestamps();
             $table->foreign('candidate_id')
                 ->references('id')->on('users')

@@ -24,7 +24,7 @@ class CreatePostsTable extends Migration
             $table->string('county');
             $table->string('town');
             $table->text('address');
-            $table->string('status')->default('Open');
+            $table->boolean('status')->default(0); // 0 - Open, 1 - Filled
             $table->timestamps();
             $table->foreign('employer_id')
                 ->references('id')->on('users')
