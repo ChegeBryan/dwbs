@@ -2,6 +2,9 @@
 
 namespace App\Console\Commands;
 
+use App\CandidateProfile;
+use App\Jobs\SendJobMessage;
+use App\Post;
 use Illuminate\Console\Command;
 
 class JobNotificationCommand extends Command
@@ -37,6 +40,21 @@ class JobNotificationCommand extends Command
      */
     public function handle()
     {
-        //
+        $candidates = CandidateProfile::where('status', 0)->get();
+        $posts = Post::where('status', 0)->get();
+        foreach ($candidates as $candidate) {
+            foreach ($posts as $post) {
+                // Check if candidate profile matches job
+                if (
+                    $post->category == $candidate->category &&
+                    $post->type == $candidate->type &&
+                    $post->salary >= $candidate->salary &&
+                    $post->county == $candidate->county &&
+                    $post->town == $candidate->town
+                ) {
+                    SendJobMessage::dispatch($candidate, $post);
+                }
+            }
+        }
     }
 }
