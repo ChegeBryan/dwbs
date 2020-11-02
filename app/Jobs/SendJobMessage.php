@@ -44,7 +44,7 @@ class SendJobMessage implements ShouldQueue
         $smsTemplate = "Found a job match: Job title: %s, Job Id: %s. Login to your account to apply.";
         $body = sprintf($smsTemplate, $this->post->title, $this->post->id);
         $this->twilioClient->messages->create(
-            $this->candidate->phone,
+            $this->candidate->user->mobile,
             [
                 'from' => config('services.twilio.phone_number'),
                 'body' => $body
