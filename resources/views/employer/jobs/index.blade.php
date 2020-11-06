@@ -21,7 +21,10 @@
             {{date('d-m-Y', strtotime($job->created_at))}}</p>
         </td>
         <td class="py-4 pr-0 pl-5">
-          <p><a class="text-info text-decoration-none" href="#">24 Applications</a></p>
+          <p><a class="text-info text-decoration-none"
+               href="{{route('jobs.show',  $job->id)}}">{{count($job->applications)}}
+              @choice('Application|Applications',
+              $job->applications)</a></p>
         </td>
         <td class="py-4 pr-0 pl-4 pr-2">
           <ul class="list-inline">
