@@ -24,8 +24,9 @@
     <hr>
 
     <h5 class="pt-4">Applicants</h5>
-    @foreach($job->applications as $application)
     <div class="list-group">
+      @if(count($job->applications) > 0)
+      @foreach($job->applications as $application)
       <div class="list-group-item d-flex justify-content-between">
         <div class="media">
           <div class="media-left"><img src="https://webstrot.com/html/jbdesk/main_version/dashboard/images/rs1.jpg"
@@ -38,8 +39,10 @@
           <button class="text-white btn btn-danger">Pick</button>
         </div>
       </div>
+      @endforeach
+      @else
+      <p class="card-text">No applications yet.</p>
+      @endif
     </div>
-    @endforeach
   </div>
-</div>
-@endsection
+  @endsection
