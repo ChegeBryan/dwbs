@@ -135,6 +135,23 @@ class PostController extends Controller
     }
 
     /**
+     * Update job status
+     *
+     * @param int $id
+     *
+     */
+    public function updatePostStatus($id)
+    {
+        $job = Post::find($id);
+        $job->status = 1;
+        $job->save();
+
+        return redirect()->route('jobs.index')->with('success', 'Job Status Updated');
+    }
+
+
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
