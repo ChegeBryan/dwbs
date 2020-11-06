@@ -36,7 +36,12 @@
           </div>
         </div>
         <div class="d-flex align-items-center">
-          <button class="text-white btn btn-danger">Pick</button>
+          <form action="{{ route('application.update', $application->id)}}" method="post">
+            @csrf
+            @method('PATCH')
+            <input type="hidden" name="candidate" value="{{$application->candidate_id}}">
+            <button type="submit" class="text-white btn btn-danger">Pick Candidate</button>
+          </form>
         </div>
       </div>
       @endforeach
