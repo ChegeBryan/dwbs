@@ -83,13 +83,19 @@ class ApplicationController extends Controller
     {
         $request->validate([
             'candidate' => 'required',
+            'job' => 'required',
         ]);
         $application = Application::find($id);
         $application->status = 1;
 
         $application->save();
 
-        return redirect()->action('PostController@updatePostStatus', ['id' => $request->get('candidate')]);
+        // Update post status
+        $job = Post::find($request->get('job'));
+        $job->status = 1;
+        $job->save();
+
+        return redirect()->route('jobs.index')->with('success', 'Job Status Updated');
     }
 
     /**
