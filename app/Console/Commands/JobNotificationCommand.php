@@ -49,8 +49,8 @@ class JobNotificationCommand extends Command
                     $post->category == $candidate->category &&
                     $post->type == $candidate->type &&
                     $post->salary >= $candidate->salary &&
-                    $post->county == $candidate->county &&
-                    $post->town == $candidate->town
+                    strcasecmp($post->county, $candidate->county) == 0 &&
+                    strcasecmp($post->town, $candidate->town) == 0
                 ) {
                     SendJobMessage::dispatch($candidate, $post);
                 }
