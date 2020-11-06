@@ -81,7 +81,15 @@ class ApplicationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'candidate' => 'required',
+        ]);
+        $application = Application::find($id);
+        $application->status = 1;
+
+        $application->save();
+
+        return redirect()->action('PostController@updatePostStatus', ['id' => $request->get('candidate')]);
     }
 
     /**
