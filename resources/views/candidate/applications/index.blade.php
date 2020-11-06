@@ -6,6 +6,7 @@
   <table class="table" id="dataTable">
     <thead>
       <tr>
+        <th scope="col">Job Id</th>
         <th scope="col">Job Title</th>
         <th scope="col">Job Type</th>
         <th scope="col">Posted By</th>
@@ -18,6 +19,7 @@
     <tbody>
       @foreach($jobs as $job)
       <tr>
+        <td class="py-5">{{ucwords($job->id)}}</td>
         <td class="py-5">{{ucwords($job->title)}}</td>
         <td class="py-5">{{ucwords($job->type)}}</td>
         <td class="py-5">{{ucwords($job->user->name)}}</td>

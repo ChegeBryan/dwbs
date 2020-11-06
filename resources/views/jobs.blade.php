@@ -8,6 +8,7 @@
     <table class="table">
       <thead>
         <tr>
+          <th scope="col">Job Id</th>
           <th scope="col">Job Title</th>
           <th scope="col">Job Type</th>
           <th scope="col">Posted By</th>
@@ -20,6 +21,7 @@
       <tbody>
         @foreach($jobs as $job)
         <tr>
+          <td>{{ucwords($job->id)}}</td>
           <td>{{ucwords($job->title)}}</td>
           <td>{{ucwords($job->type)}}</td>
           <td>{{ucwords($job->user->name)}}</td>
