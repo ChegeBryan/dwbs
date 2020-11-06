@@ -24,25 +24,22 @@
     <hr>
 
     <h5 class="pt-4">Applicants</h5>
+    @foreach($job->applications as $application)
     <div class="list-group">
       <div class="list-group-item d-flex justify-content-between">
         <div class="media">
           <div class="media-left"><img src="https://webstrot.com/html/jbdesk/main_version/dashboard/images/rs1.jpg"
                  alt="thumbnail" class="d-block media-object"></div>
           <div class="pl-3  media-body">
-            <h4 class="pl-3 m-0">Luca Wallace</h4>
+            <h4 class="pl-3 m-0">{{$application->candidate->name}}</h4>
           </div>
         </div>
         <div class="d-flex align-items-center">
           <button class="text-white btn btn-danger">Pick</button>
         </div>
-
       </div>
     </div>
-
-
-
-
+    @endforeach
   </div>
 </div>
 @endsection
