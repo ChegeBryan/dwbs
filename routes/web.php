@@ -21,7 +21,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::redirect('', '/candidate', 301)->name('candidate');
     Route::resource('candidate', 'CandidateProfileController');
     Route::get('/job/{id}', 'PostController@showJobToCandidate')->name('job.candidate');
-    Route::resource('application', 'ApplicationController')->only(['destroy', 'index', 'store']);
+    Route::resource('application', 'ApplicationController')->only(['destroy', 'index', 'store', 'update']);
 });
 
 Route::group(['middleware' => 'employer', 'prefix' => 'employer'], function () {
