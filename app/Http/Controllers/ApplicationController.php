@@ -16,7 +16,7 @@ class ApplicationController extends Controller
      */
     public function index()
     {
-        $jobs = Post::where('status', 'Open')->get();
+        $jobs = Post::where('status', 0)->get();
         $applications = Application::all();
         return view('candidate.applications.index', compact('jobs', 'applications'));
     }
