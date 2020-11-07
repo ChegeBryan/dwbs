@@ -150,12 +150,11 @@ class PostController extends Controller
     /**
      * Show closed jobs
      *
-     * @param int $id
      */
-    public function closedJobs($id)
+    public function closedJobs()
     {
         $jobs = Post::where([
-            ['employer_id', $id],
+            ['employer_id', Auth::user()->id],
             ['status', 1]
         ])->paginate(5);
         return view('employer.jobs.closed', compact('jobs'));
