@@ -24,6 +24,9 @@
     <hr>
 
     <h5 class="pt-4">Applicants</h5>
+    @if($job->status == 1)
+    <p class="card-text">Position Filled.</p>
+    @else
     <div class="list-group">
       @if(count($job->applications) > 0)
       @foreach($job->applications as $application)
@@ -50,5 +53,7 @@
       <p class="card-text">No applications yet.</p>
       @endif
     </div>
+    @endif
+
   </div>
   @endsection
