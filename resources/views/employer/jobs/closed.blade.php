@@ -11,6 +11,7 @@
       </tr>
     </thead>
     <tbody class="border">
+      @if(count($jobs) > 0)
       @foreach($jobs as $job)
       <tr>
         <td class="py-3 pr-0 pl-5">
@@ -41,6 +42,13 @@
         </td>
       </tr>
       @endforeach
+      @else
+      <tr>
+        <td colspan="3">
+          <span class="">Nothing to show.</span>
+        </td>
+      </tr>
+      @endif
     </tbody>
   </table>
 </div>
