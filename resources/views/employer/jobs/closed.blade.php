@@ -12,9 +12,6 @@
     </thead>
     <tbody class="border">
       @foreach($jobs as $job)
-      @if($job->status == 1)
-      @continue
-      @endif
       <tr>
         <td class="py-3 pr-0 pl-5">
           <h6><a href="{{ route('jobs.show', $job->id) }}"
@@ -25,17 +22,13 @@
         </td>
         <td class="py-4 pr-0 pl-5">
           <p>
-            <a class="text-info text-decoration-none"
-               href="{{route('jobs.show',  $job->id)}}">{{count($job->applications)}}
-              @choice('Application|Applications', $job->applications)</a>
+            <span class="text-info">Position Filled</span>
           </p>
         </td>
         <td class="py-4 pr-0 pl-4 pr-2">
           <ul class="list-inline">
             <li class="list-inline-item mr-3"><a href="{{route('jobs.show',  $job->id)}}" class="text-dark"><i
                    class="fas fa-eye fa-fw"></i></a></li>
-            <li class="list-inline-item mr-3"><a href="{{route('jobs.edit',  $job->id)}}" class="text-dark"><i
-                   class="fas fa-edit fa-fw"></i></a></li>
             <li class="list-inline-item">
               <form action="{{ route('jobs.destroy', $job->id)}}" method="post">
                 @csrf
