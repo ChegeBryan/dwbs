@@ -146,4 +146,18 @@ class PostController extends Controller
         $job->delete();
         return redirect()->route('jobs.index')->with('success', 'Deleted ' . ucfirst($job->title) . ' job!');
     }
+
+    /**
+     * Show closed jobs
+     *
+     * @param int $id
+     */
+    public function closedJobs($id)
+    {
+        $jobs = Post::where([
+            ['employer_id', $id],
+            ['status', 1]
+        ])->paginate(5);
+        return view('employer.jobs.closed', compact('jobs'));
+    }
 }
