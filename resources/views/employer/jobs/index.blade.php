@@ -12,6 +12,9 @@
     </thead>
     <tbody class="border">
       @foreach($jobs as $job)
+      @if($job->status == 1)
+      @continue
+      @endif
       <tr>
         <td class="py-3 pr-0 pl-5">
           <h6><a href="{{ route('jobs.show', $job->id) }}"
@@ -21,10 +24,11 @@
             {{date('d-m-Y', strtotime($job->created_at))}}</p>
         </td>
         <td class="py-4 pr-0 pl-5">
-          <p><a class="text-info text-decoration-none"
+          <p>
+            <a class="text-info text-decoration-none"
                href="{{route('jobs.show',  $job->id)}}">{{count($job->applications)}}
-              @choice('Application|Applications',
-              $job->applications)</a></p>
+              @choice('Application|Applications', $job->applications)</a>
+          </p>
         </td>
         <td class="py-4 pr-0 pl-4 pr-2">
           <ul class="list-inline">
