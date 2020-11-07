@@ -19,7 +19,8 @@
          class="pl-2 stretched-link text-decoration-none text-secondary" href="{{ route('jobs.index') }}"><i
            class="fas fa-briefcase fa-fw mx-2 text-primary"></i> Manage Jobs</a></li>
     <li class="list-group-item list-group-item-action"><a
-         class="pl-2 stretched-link text-decoration-none text-secondary" href="#"><i
+         class="pl-2 stretched-link text-decoration-none text-secondary"
+         href="{{ route('job.closed', Auth::user()->id) }}"><i
            class="fas fa-clipboard-list fa-fw mx-2 text-primary"></i>Closed Jobs</a></li>
   </ul>
 </div>
