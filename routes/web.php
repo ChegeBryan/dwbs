@@ -26,6 +26,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::group(['middleware' => 'employer', 'prefix' => 'employer'], function () {
     Route::redirect('', '/employer/jobs', 301)->name('employer');
+    Route::get('/job/{id}', 'PostController@closedJobs')->name('job.closed');
     Route::resource('jobs', 'PostController');
     Route::resource('application', 'ApplicationController')->only(['update']);
 });
