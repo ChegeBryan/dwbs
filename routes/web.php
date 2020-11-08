@@ -22,7 +22,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('candidate', 'CandidateProfileController');
     Route::get('/job/{id}', 'PostController@showJobToCandidate')->name('job.candidate');
     Route::resource('application', 'ApplicationController')->only(['destroy', 'index', 'store']);
-    Route::resource('profile', 'UserController');
+    Route::resource('profile', 'UserController')->only(['edit', 'update'])->names([
+        'edit' => 'candidate.profile.edit'
+    ]);
 });
 
 Route::group(['middleware' => 'employer', 'prefix' => 'employer'], function () {
