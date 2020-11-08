@@ -10,8 +10,9 @@
            class="fas fa-tachometer-alt fa-fw mx-2 text-primary"></i> Dashboard</a>
     </li>
     <li class="list-group-item list-group-item-action"><a
-         class="pl-2 stretched-link text-decoration-none text-secondary" href="#"><i
-           class="fas fa-edit fa-fw mx-2 text-primary"></i> Edit Profile</a></li>
+         class="pl-2 stretched-link text-decoration-none text-secondary"
+         href="{{ route('profile.edit', Auth::user()->id)}}"><i class="fas fa-edit fa-fw mx-2 text-primary"></i> Edit
+        Profile</a></li>
     <li class="list-group-item list-group-item-action"><a
          class="pl-2 stretched-link text-decoration-none text-secondary" href="{{ route('jobs.create') }}"><i
            class="fas fa-user-plus fa-fw mx-2 text-primary"></i> Post New Job</a></li>
