@@ -122,8 +122,8 @@ class CandidateProfileController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id);
-        $user->delete();
-        return redirect()->route('register')->with('success', 'Account Deleted!');
+        $profile = CandidateProfile::find($id);
+        $profile->delete();
+        return redirect()->route('candidate.index')->with('success', 'Your job preferences have been Deleted.!');
     }
 }
