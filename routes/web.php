@@ -25,6 +25,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('profile', 'UserController')->only(['edit', 'update'])->names([
         'edit' => 'candidate.profile.edit',
         'update' => 'candidate.profile.update',
+        'destroy' => 'candidate.profile.destroy',
     ]);
 });
 
@@ -33,5 +34,5 @@ Route::group(['middleware' => 'employer', 'prefix' => 'employer'], function () {
     Route::get('/jobs/closed', 'PostController@closedJobs')->name('jobs.closed');
     Route::resource('jobs', 'PostController');
     Route::resource('application', 'ApplicationController')->only(['update']);
-    Route::resource('profile', 'UserController');
+    Route::resource('profile', 'UserController')->only(['edit', 'update', 'destroy']);
 });
