@@ -12,8 +12,8 @@
     </li>
     <li class="list-group-item list-group-item-action border-0"><a
          class="pl-2 stretched-link text-decoration-none text-secondary"
-         href="{{route('candidate.edit', Auth::user()->id)}}"><i class="fas fa-edit fa-fw mx-2 text-danger"></i>
-        Profile</a></li>
+         href="{{route('candidate.edit', Auth::user()->id)}}"><i class="fas fa-edit fa-fw mx-2 text-danger"></i> Job
+        Preferences</a></li>
     <li class="list-group-item list-group-item-action border-0"><a
          class="pl-2 stretched-link text-decoration-none text-secondary" href="{{ route('application.index') }}"><i
            class="fas fa-briefcase fa-fw mx-2 text-danger"></i> Jobs Catalog</a></li>
@@ -24,10 +24,11 @@
 
   <ul class="list-group list-group-flush border-top-0">
     <li class="list-group-item list-group-item-action border-0"><a
-         class="pl-2 stretched-link text-decoration-none text-secondary" href="{{ route('logout') }}"
-         onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> <i
-           class="fas fa-sign-out-alt fa-fw mx-2 text-danger"></i> Logout</a>
-    </li>
+         class="pl-2 stretched-link text-decoration-none text-secondary"
+         href="{{route('candidate.profile.edit', Auth::user()->id)}}"><i
+           class="fas fa-user-edit fa-fw mx-2 text-danger"></i>
+        Edit
+        Profile</a></li>
     <li class="list-group-item list-group-item-action border-0"><a
          class="pl-2 stretched-link text-decoration-none text-secondary" href="#"
          onclick="event.preventDefault(); document.getElementById('delete_account').submit();"><i
@@ -37,6 +38,11 @@
         @csrf
         @method('DELETE')
       </form>
+    </li>
+    <li class="list-group-item list-group-item-action border-0"><a
+         class="pl-2 stretched-link text-decoration-none text-secondary" href="{{ route('logout') }}"
+         onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> <i
+           class="fas fa-sign-out-alt fa-fw mx-2 text-danger"></i> Logout</a>
     </li>
   </ul>
 
