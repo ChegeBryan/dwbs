@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Application;
+use App\CandidateProfile;
+use App\Jobs\UpdateCandidateAcceptance;
 use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -94,6 +96,11 @@ class ApplicationController extends Controller
         $job = Post::find($request->get('job'));
         $job->status = 1;
         $job->save();
+
+
+        //send sms to candidate
+        $candidate = CandidateProfile::where('candidate_id', $request->get('candidate'))->first();
+        UpdateCandidateAcceptance::dispatch($candidate, $job);
 
         return redirect()->route('jobs.index')->with('success', 'Job Status Updated');
     }
