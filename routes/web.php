@@ -22,6 +22,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('candidate', 'CandidateProfileController');
     Route::get('/job/{id}', 'PostController@showJobToCandidate')->name('job.candidate');
     Route::resource('application', 'ApplicationController')->only(['destroy', 'index', 'store']);
+    Route::resource('profile', 'UserController');
 });
 
 Route::group(['middleware' => 'employer', 'prefix' => 'employer'], function () {
@@ -29,4 +30,5 @@ Route::group(['middleware' => 'employer', 'prefix' => 'employer'], function () {
     Route::get('/jobs/closed', 'PostController@closedJobs')->name('jobs.closed');
     Route::resource('jobs', 'PostController');
     Route::resource('application', 'ApplicationController')->only(['update']);
+    Route::resource('profile', 'UserController');
 });
