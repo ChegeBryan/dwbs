@@ -41,7 +41,7 @@ class UpdateCandidateAcceptance implements ShouldQueue
     public function handle()
     {
         $smsTemplate = "You have been accepted for the Job Title: %s, Job Id: %s. Posted By: %s. You can reach the employer through: %s";
-        $body = sprintf($smsTemplate, $this->post->title, $this->post->id, $this->post->user->mobile);
+        $body = sprintf($smsTemplate, $this->post->title, $this->post->id, $this->post->user->name, $this->post->user->mobile);
         $this->twilioClient->messages->create(
             $this->candidate->user->mobile,
             [
