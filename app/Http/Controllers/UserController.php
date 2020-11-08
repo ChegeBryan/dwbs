@@ -58,7 +58,12 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        return view('users.edit', compact('user'));
+        if ($user->is_employer == 0) {
+            // template for candidate editing
+            return view('candidate.edit', compact('user'));
+        }
+        // template for employers editing
+        return view('employer.edit', compact('user'));
     }
 
     /**
