@@ -33,7 +33,7 @@
          class="pl-2 stretched-link text-decoration-none text-secondary" href="#"
          onclick="event.preventDefault(); document.getElementById('delete_account').submit();"><i
            class="fas fa-edit fa-fw mx-2 text-danger"></i> Delete Account</a>
-      <form id="delete_account" action="{{ route('candidate.destroy', Auth::user()->id) }}" method="POST"
+      <form id="delete_account" action="{{ route('candidate.account.destroy', Auth::user()->id) }}" method="POST"
             style="display: none;">
         @csrf
         @method('DELETE')
