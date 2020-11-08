@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -75,7 +76,25 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email,' . $id,
+            'mobile' => 'required|string',
+        ]);
+
+        $user = User::find($id);
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');
+        $user->mobile = $request->get('mobile');
+
+        $user->save();
+
+        if (Auth::user()->is_employer == 0) {
+            // user not an employer show candidate dashboard
+            return redirect()->route('candidate.index')->with('success', 'Profile updated!');;
+        }
+        // user is employer show employer dashboard.
+        return redirect()->route('jobs.index')->with('success', 'Profile updated!');
     }
 
     /**
