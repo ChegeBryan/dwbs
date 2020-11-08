@@ -1,7 +1,7 @@
 @extends('candidate.base')
 
 @section('col-9')
-<form method="POST" action="{{route('candidate.profile.update', Auth::user()->id)}}">
+<form method="POST" action="{{route('candidate.account.update', Auth::user()->id)}}">
   @method('PATCH')
   @csrf
 
