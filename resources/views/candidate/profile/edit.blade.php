@@ -46,6 +46,14 @@
           @enderror
         </div>
       </div>
+
+      @if(Auth::user()->is_employer == 0)
+      <div class="custom-control custom-switch pt-3">
+        <input type="checkbox" class="custom-control-input" id="open_to_job" name="open_to_job" @if($profile->status ==
+        0) checked @endif>
+        <label class="custom-control-label" for="open_to_job">Open to Jobs</label>
+      </div>
+      @endif
     </div>
   </div>
   <!--End about job-->
