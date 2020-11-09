@@ -22,7 +22,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('candidate', 'CandidateProfileController');
     Route::get('/job/{id}', 'PostController@showJobToCandidate')->name('job.candidate');
     Route::resource('application', 'ApplicationController')->only(['destroy', 'index', 'store']);
-    Route::resource('account', 'UserController')->only(['edit', 'update'])->names([
+    Route::resource('account', 'UserController')->only(['edit', 'update', 'destroy'])->names([
         'edit' => 'candidate.account.edit',
         'update' => 'candidate.account.update',
         'destroy' => 'candidate.account.destroy',
