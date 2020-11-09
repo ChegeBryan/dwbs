@@ -48,7 +48,7 @@
       </div>
     </div>
   </div>
-  <!--End about job-->
+  <!--End contact information-->
 
 
   <button type="submit" class="btn btn-primary btn-block mt-3">
