@@ -11,8 +11,9 @@
         <div class="text-center media-left"><i
              class="card-img-top far fa-user fa-4x text-center text-danger d-block media-object"></i><span>{{$application->job->user->name}}</span>
         </div>
-        <div class="pl-5 pr-5 align-self-center media-body"><a class="text-decoration_none text-dark font-weight-bold"
-             href="/candidate/apply">{{ucfirst($application->job->title)}}</a>
+        <div class="pl-5 pr-5 align-self-center media-body"><a
+             href="{{ route('job.candidate', $application->job->id) }}"
+             class="text-decoration_none text-dark font-weight-bold">{{ucfirst($application->job->title)}}</a>
           <ul class="m-0 mt-2 p-0 list-unstyled">
             <li class="mr-3 text-secondary">
               <i class="fas fa-wallet fa-fw text-danger mr-1"></i> Ksh. {{$application->job->salary}}
