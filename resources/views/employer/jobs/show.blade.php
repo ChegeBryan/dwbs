@@ -43,7 +43,7 @@
             @method('PATCH')
             <input type="hidden" name="candidate" value="{{$application->candidate_id}}">
             <input type="hidden" name="job" value="{{$job->id}}">
-            <button type="submit" class="text-white btn btn-danger">Pick Candidate</button>
+            <button type="submit" class="text-white btn btn-primary">Pick Candidate</button>
           </form>
         </div>
       </div>
