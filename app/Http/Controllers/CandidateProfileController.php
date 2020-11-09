@@ -124,6 +124,6 @@ class CandidateProfileController extends Controller
     {
         $profile = CandidateProfile::find($id);
         $profile->delete();
-        return redirect()->route('candidate.index')->with('success', 'Your job preferences have been Deleted.!');
+        return redirect()->route('candidate.index')->with('success', 'Your job preferences have been Deleted!');
     }
 }
