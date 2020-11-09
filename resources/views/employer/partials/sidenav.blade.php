@@ -11,7 +11,7 @@
     </li>
     <li class="list-group-item list-group-item-action"><a
          class="pl-2 stretched-link text-decoration-none text-secondary"
-         href="{{ route('profile.edit', Auth::user()->id)}}"><i class="fas fa-edit fa-fw mx-2 text-primary"></i> Edit
+         href="{{ route('account.edit', Auth::user()->id)}}"><i class="fas fa-edit fa-fw mx-2 text-primary"></i> Edit
         Profile</a></li>
     <li class="list-group-item list-group-item-action"><a
          class="pl-2 stretched-link text-decoration-none text-secondary" href="{{ route('jobs.create') }}"><i
