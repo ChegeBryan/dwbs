@@ -32,10 +32,9 @@
       @foreach($job->applications as $application)
       <div class="list-group-item d-flex justify-content-between">
         <div class="media">
-          <div class="media-left"><img src="https://webstrot.com/html/jbdesk/main_version/dashboard/images/rs1.jpg"
-                 alt="thumbnail" class="d-block media-object"></div>
-          <div class="pl-3  media-body">
-            <h4 class="pl-3 m-0">{{$application->candidate->name}}</h4>
+          <div class="media-body">
+            <h4 class="m-0">{{$application->candidate->name}}</h4>
+            <p>Submitted on: {{date("Y M d h:ia", strtotime($application->created_at))}}</p>
           </div>
         </div>
         <div class="d-flex align-items-center">
