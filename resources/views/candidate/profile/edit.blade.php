@@ -85,4 +85,10 @@
     {{ __('Update Jobs Preferences') }}
   </button>
 </form>
+
+<form action="{{ route('candidate.destroy', $profile->id) }}" method="POST"">
+  @csrf
+  @method('DELETE')
+  <button type=" submit" class="btn btn-danger btn-block mt-3">Delete Profile</button>
+</form>
 @endsection
