@@ -109,6 +109,7 @@ class CandidateProfileController extends Controller
         $profile->salary = $request->get('salary');
         $profile->county = $request->get('county');
         $profile->town = $request->get('town');
+        $profile->status = $request->get('open_to_jobs');
 
         $profile->save();
         return redirect()->route('candidate.index')->with('success', 'Job Preferences Updated.');
