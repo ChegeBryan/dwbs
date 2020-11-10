@@ -48,11 +48,17 @@
       </div>
 
       @if(Auth::user()->is_employer == 0)
-      <div class="custom-control custom-switch pt-3">
-        <input type="checkbox" class="custom-control-input" id="open_to_job" name="open_to_job" @if($profile->status ==
-        0) checked @endif>
-        <label class="custom-control-label" for="open_to_job">Open to Jobs</label>
+      <div class="custom-control custom-radio custom-control-inline pt-3">
+        <input type="radio" id="customRadioInline1" name="open_to_jobs" class="custom-control-input"
+               @if($profile->status == 0) checked @endif value="0">
+        <label class="custom-control-label" for="customRadioInline1">I'm open to Jobs</label>
       </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" id="customRadioInline2" name="open_to_jobs" class="custom-control-input"
+               @if($profile->status == 1) checked @endif value="1">
+        <label class="custom-control-label" for="customRadioInline2">I'm not open to Jobs</label>
+      </div>
+      <small class="form-text text-muted">Set open to work to receive job updates.</small>
       @endif
     </div>
   </div>
