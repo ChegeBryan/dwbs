@@ -12,6 +12,9 @@
       <p class="text-muted"><i class="far fa-clock fa-fw"></i>{{$job->type}}</p>
     </div>
 
+    <h5 class="card-title">Employer</h5>
+    <p class="card-text">{{$job->user->name}}</p>
+
     <h5 class="card-title">Job Description</h5>
     <p class="card-text">{{$job->description}}</p>
 
