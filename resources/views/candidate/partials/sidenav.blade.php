@@ -1,6 +1,6 @@
 <div class="card">
+  <img class="card-img-top" src="{{ asset('img/default2.png')}}" alt="Card image cap">
   <div class="card-body">
-    <i class="card-img-top far fa-user fa-8x text-center text-info mb-3"></i>
     <h5 class="card-title">{{ ucwords(Auth::user()->name) }}</h5>
     <h6 class="card-subtitle">{{ ucwords(Auth::user()->mobile) }}</h6>
   </div>
