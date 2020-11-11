@@ -8,9 +8,6 @@
   <div class="pl-2 row">
     <div class="col-md-8 col-sm-12 col-xs-12">
       <div class="p-2 media">
-        <div class="text-center media-left"><i
-             class="card-img-top far fa-user fa-4x text-center text-danger d-block media-object"></i><span>{{$application->job->user->name}}</span>
-        </div>
         <div class="pl-5 pr-5 align-self-center media-body"><a
              href="{{ route('job.candidate', $application->job->id) }}"
              class="text-decoration_none text-dark font-weight-bold">{{ucfirst($application->job->title)}}</a>
