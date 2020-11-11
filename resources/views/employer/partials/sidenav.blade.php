@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card mb-5">
   <img class="card-img-top" src="{{ asset('img/default.png')}}" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">{{ ucwords(Auth::user()->name) }}</h5>
