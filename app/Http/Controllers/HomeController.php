@@ -24,8 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $jobs = Post::where('status', 'Open')->latest()->take(5)->get();
-        $all_jobs = Post::where('status', 'Open')->count();
+        $jobs = Post::where('status', 0)->latest()->take(5)->get();
+        $all_jobs = Post::where('status', 0)->count();
         return view('home', compact('jobs', 'all_jobs'));
     }
 
