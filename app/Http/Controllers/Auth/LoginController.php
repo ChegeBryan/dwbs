@@ -50,9 +50,9 @@ class LoginController extends Controller
 
         if (auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))) {
             if (auth()->user()->is_employer == 1) {
-                return redirect()->route('employer');
+                return redirect()->intended('employer');
             } else {
-                return redirect()->route('candidate');
+                return redirect()->intended('candidate');
             }
         } else {
             return redirect()->route('login')
