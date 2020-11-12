@@ -36,8 +36,7 @@ class HomeController extends Controller
      */
     public function jobs()
     {
-        $jobs = Post::where('status', 'Open')->paginate(10);
-        $all_jobs = Post::where('status', 'Open')->count();
-        return view('jobs', compact('jobs', 'all_jobs'));
+        $jobs = Post::where('status', 0)->get();
+        return view('jobs', compact('jobs'));
     }
 }
