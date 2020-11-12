@@ -41,7 +41,7 @@
           <td>{{ucwords($job->town)}}</td>
           <td>Ksh. {{number_format($job->salary, 2)}}</td>
           <td>
-            <a class="btn btn-primary" href="">Apply</a>
+            <a class="btn btn-primary" href="{{ route('job.candidate', $job->id) }}">Apply</a>
           </td>
         </tr>
         @endforeach
