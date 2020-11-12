@@ -5,7 +5,7 @@
 <div class="container py-5 jobs">
   <h1 class="text-center">Jobs</h1>
   <div class="table-responsive-sm pt-3">
-    <table class="table">
+    <table class="table" id="dataTable">
       <thead>
         <tr>
           <th scope="col">Job Id</th>
@@ -36,9 +36,10 @@
       </tbody>
     </table>
   </div>
-  <div class="d-flex justify-content-between">
-    <p>Showing {{count($jobs)}} of {{$all_jobs}} jobs.</p>
-    {{ $jobs->links() }}
-  </div>
 </div>
+<script>
+$(document).ready(function() {
+  $('#dataTable').DataTable();
+});
+</script>
 @endsection
